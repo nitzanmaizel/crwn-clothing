@@ -1,0 +1,22 @@
+{
+  "printWidth": 100,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "trailingComma": "all",
+  "useTabs": false,
+  "bracketSameLine": true,
+  "overrides": [
+    {
+      "files": "*.tsx*",
+      "options": {
+        "printWidth": 100
+      }
+    },
+    {
+      "files": "*.ts*",
+      "options": {
+        "printWidth": 100
+      }
+    }
+  ]
+}
