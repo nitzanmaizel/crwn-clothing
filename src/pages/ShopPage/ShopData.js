@@ -3,7 +3,7 @@ const ShopData = [
     id: 1,
     title: 'Hats',
     routeName: 'hats',
-    items: [
+    collections: [
       {
         id: 1,
         name: 'Brown Brim',
@@ -64,7 +64,7 @@ const ShopData = [
     id: 2,
     title: 'Sneakers',
     routeName: 'sneakers',
-    items: [
+    collections: [
       {
         id: 10,
         name: 'Adidas NMD',
@@ -119,7 +119,7 @@ const ShopData = [
     id: 3,
     title: 'Jackets',
     routeName: 'jackets',
-    items: [
+    collections: [
       {
         id: 18,
         name: 'Black Jean Shearling',
@@ -156,7 +156,7 @@ const ShopData = [
     id: 4,
     title: 'Womens',
     routeName: 'womens',
-    items: [
+    collections: [
       {
         id: 23,
         name: 'Blue Tanktop',
@@ -205,7 +205,7 @@ const ShopData = [
     id: 5,
     title: 'Mens',
     routeName: 'mens',
-    items: [
+    collections: [
       {
         id: 30,
         name: 'Camo Down Vest',
