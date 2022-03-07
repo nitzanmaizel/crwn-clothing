@@ -27,3 +27,5 @@ const ListMenuItems = [
     id: 5,
   },
 ];
+
+export default ListMenuItems;
