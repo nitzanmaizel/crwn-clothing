@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import MenuItem from '../MenuItem/MenuItem';
 import ListMenuItems from './ListMenuItems';
 
+import './Directory.scss';
+
 const Directory = () => {
   const [section, setSection] = useState([]);
 
