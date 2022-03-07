@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CollectionItem = ({ name, price, imageUrl }) => (
-  <div className='collection-item'>
+  <div className='collectionItem'>
     <div
       className='image'
       style={{
