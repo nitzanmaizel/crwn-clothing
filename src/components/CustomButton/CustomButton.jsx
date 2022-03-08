@@ -1,7 +1,9 @@
 import React from 'react';
 
+import './CustomButton.scss';
+
 const CustomButton = ({ title, ...otherProps }) => (
-  <button className='custom-button' {...otherProps}>
+  <button className='customButton' {...otherProps}>
     {title}
   </button>
 );
