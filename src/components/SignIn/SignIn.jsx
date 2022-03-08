@@ -3,6 +3,11 @@ import React, { useState } from 'react';
 const SignIn = () => {
   const [signInForm, setSignInForm] = useState({ email: '', password: '' });
 
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setSignInForm({ ...signInForm, [name]: value });
+  };
+
   const { email, password } = signInForm;
 
   return (
@@ -11,12 +16,19 @@ const SignIn = () => {
       <span>Sign in with your email and password</span>
 
       <form onSubmit={() => {}}>
-        <input name='email' type='email' onChange={() => {}} value={email} label='email' required />
+        <input
+          name='email'
+          type='email'
+          onChange={handleChange}
+          value={email}
+          label='email'
+          required
+        />
         <input
           name='password'
           type='password'
           value={password}
-          onChange={() => {}}
+          onChange={handleChange}
           label='password'
           required
         />
