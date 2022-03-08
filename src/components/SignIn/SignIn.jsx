@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './SignIn.scss';
+
 const SignIn = () => {
   const [signInForm, setSignInForm] = useState({ email: '', password: '' });
 
@@ -17,7 +19,7 @@ const SignIn = () => {
   const { email, password } = signInForm;
 
   return (
-    <div className='sign-in'>
+    <div className='signIn'>
       <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
 
