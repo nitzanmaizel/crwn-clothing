@@ -14,11 +14,13 @@ const App = () => {
     const unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
       if (user) {
         setCurrentUser(user);
+      } else {
+        setCurrentUser(null);
       }
     });
 
     return () => unsubscribeFromAuth();
-  }, []);
+  }, [currentUser]);
 
   return (
     <div>
