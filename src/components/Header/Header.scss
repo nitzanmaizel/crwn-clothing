@@ -17,6 +17,16 @@
     align-items: center;
     justify-content: flex-end;
 
+    .userMenu {
+      display: flex;
+
+      .userName {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+      }
+    }
+
     .link {
       padding: 10px 15px;
       cursor: pointer;
