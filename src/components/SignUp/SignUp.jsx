@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { auth, createUserProfileDocument } from '../../firebase/firebase';
 import CustomButton from '../CustomButton/CustomButton';
 import FormInput from '../FormInput/FormInput';
 
@@ -17,6 +18,32 @@ const SignUp = () => {
     setSignUpForm({ ...signUpForm, [name]: value });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const { displayName, email, password, confirmPassword } = this.state;
+
+    if (password !== confirmPassword) {
+      alert("passwords don't match");
+      return;
+    }
+
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(email, password);
+
+      await createUserProfileDocument(user, { displayName });
+
+      setSignUpForm({
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const { displayName, email, password, confirmPassword } = signUpForm;
 
   return (
@@ -24,7 +51,7 @@ const SignUp = () => {
       <h2 className='title'>I do not have a account</h2>
       <span>Sign up with your email and password</span>
 
-      <form className='signUpForm' onSubmit={() => {}}>
+      <form className='signUpForm' onSubmit={handleSubmit}>
         <FormInput
           type='text'
           name='displayName'
