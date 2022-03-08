@@ -18,7 +18,6 @@ const Header = ({ currentUser }) => (
       <Link className='link' to='/shop'>
         CONTACT
       </Link>
-      {console.log(currentUser)}
       {currentUser ? (
         <div className='userMenu'>
           <div className='userName'>Welcome {currentUser.displayName}</div>
