@@ -1,7 +1,9 @@
 import React from 'react';
 
-const CustomButton = () => {
-  return <div>CustomButton</div>;
-};
+const CustomButton = ({ title, ...otherProps }) => (
+  <button className='custom-button' {...otherProps}>
+    {title}
+  </button>
+);
 
 export default CustomButton;
