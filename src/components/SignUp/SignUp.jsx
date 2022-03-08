@@ -23,7 +23,7 @@ const SignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { displayName, email, password, confirmPassword } = this.state;
+    const { displayName, email, password, confirmPassword } = signUpForm;
 
     if (password !== confirmPassword) {
       alert("passwords don't match");
@@ -75,7 +75,7 @@ const SignUp = () => {
           name='password'
           value={password}
           onChange={handleChange}
-          label='Password'
+          label='Password (Minimum 6 character)'
           required
         />
         <FormInput
