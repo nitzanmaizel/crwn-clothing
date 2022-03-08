@@ -6,9 +6,12 @@
   margin-bottom: 25px;
 
   .logoContainer {
-    height: 100%;
+    height: auto;
     width: 70px;
     padding: 25px;
+    display: flex;
+    box-sizing: initial;
+    align-items: center;
   }
 
   .headerLinks {
