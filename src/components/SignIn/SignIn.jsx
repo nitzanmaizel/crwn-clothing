@@ -8,6 +8,12 @@ const SignIn = () => {
     setSignInForm({ ...signInForm, [name]: value });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSignInForm({ email: '', password: '' });
+    console.log(signInForm, 'signInForm');
+  };
+
   const { email, password } = signInForm;
 
   return (
@@ -15,7 +21,7 @@ const SignIn = () => {
       <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
 
-      <form onSubmit={() => {}}>
+      <form onSubmit={handleSubmit}>
         <input
           name='email'
           type='email'
