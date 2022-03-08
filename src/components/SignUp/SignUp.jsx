@@ -12,6 +12,11 @@ const SignUp = () => {
     confirmPassword: '',
   });
 
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setSignUpForm({ ...signUpForm, [name]: value });
+  };
+
   const { displayName, email, password, confirmPassword } = signUpForm;
 
   return (
@@ -24,7 +29,7 @@ const SignUp = () => {
           type='text'
           name='displayName'
           value={displayName}
-          onChange={() => {}}
+          onChange={handleChange}
           label='Display Name'
           required
         />
@@ -32,7 +37,7 @@ const SignUp = () => {
           type='email'
           name='email'
           value={email}
-          onChange={() => {}}
+          onChange={handleChange}
           label='Email'
           required
         />
@@ -40,7 +45,7 @@ const SignUp = () => {
           type='password'
           name='password'
           value={password}
-          onChange={() => {}}
+          onChange={handleChange}
           label='Password'
           required
         />
@@ -48,7 +53,7 @@ const SignUp = () => {
           type='password'
           name='confirmPassword'
           value={confirmPassword}
-          onChange={() => {}}
+          onChange={handleChange}
           label='Confirm Password'
           required
         />
