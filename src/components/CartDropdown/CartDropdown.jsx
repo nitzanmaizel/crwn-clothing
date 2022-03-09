@@ -1,7 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
-import { toggleCart } from '../../redux/cart/cartActions';
 
 import CustomButton from '../CustomButton/CustomButton';
 
@@ -16,8 +13,4 @@ const CartDropdown = () => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleCartHidden: () => dispatch(toggleCart()),
-});
-
-export default connect(null, mapDispatchToProps)(CartDropdown);
+export default CartDropdown;

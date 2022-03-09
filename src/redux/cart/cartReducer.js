@@ -1,8 +1,10 @@
-import CartActionTypes from './cart.types';
+import CartActionTypes from './cartTypes';
 
 const INITIAL_STATE = {
   hidden: true,
 };
+
+console.log(INITIAL_STATE, 'INITIAL_STATE');
 
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
