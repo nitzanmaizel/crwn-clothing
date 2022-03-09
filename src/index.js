@@ -7,15 +7,16 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';
+import store from './redux/store';
 
 import './index.css';
 
 ReactDOM.render(
-  // <Provider>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  // </Provider>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root'),
 );
 
