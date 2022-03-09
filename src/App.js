@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { auth, createUserProfileDocument } from './firebase/firebase';
+import { setCurrentUser } from './redux/user/userActions';
 
 import HomePage from './pages/HomePage/HomePage';
 import ShopPage from './pages/ShopPage/ShopPage';
 import AuthPage from './pages/AuthPage/AuthPage';
 import Header from './components/Header/Header';
-import { auth, createUserProfileDocument } from './firebase/firebase';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -41,4 +44,12 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
