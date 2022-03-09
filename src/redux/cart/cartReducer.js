@@ -3,6 +3,7 @@ import { addItemToCart } from './cartUtils';
 
 const INITIAL_STATE = {
   hidden: true,
+  cartItems: [],
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {
