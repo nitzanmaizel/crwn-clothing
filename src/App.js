@@ -11,23 +11,25 @@ import AuthPage from './pages/AuthPage/AuthPage';
 import Header from './components/Header/Header';
 
 const App = (props) => {
+  const { currentUser, setCurrentUser } = props;
+
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot((snapShot) => {
-          props.setCurrentUser({
+          setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
           });
         });
       } else {
-        props.setCurrentUser(userAuth);
+        setCurrentUser(userAuth);
       }
     });
 
     return () => unsubscribeFromAuth();
-  }, [props]);
+  }, [setCurrentUser]);
 
   return (
     <div>
