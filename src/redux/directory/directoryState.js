@@ -1,4 +1,4 @@
-const ListMenuItems = [
+const DIRECTORY_STATE = [
   {
     title: 'hats',
     imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
@@ -33,4 +33,4 @@ const ListMenuItems = [
   },
 ];
 
-export default ListMenuItems;
+export default DIRECTORY_STATE;

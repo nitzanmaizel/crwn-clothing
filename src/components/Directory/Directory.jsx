@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MenuItem from '../MenuItem/MenuItem';
-import ListMenuItems from './ListMenuItems';
+import ListMenuItems from '../../redux/directory/directoryState';
 
 import './Directory.scss';
 
