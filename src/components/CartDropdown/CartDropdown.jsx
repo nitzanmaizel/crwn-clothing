@@ -20,7 +20,7 @@ const CartDropdown = ({ cartItems, history }) => {
           <div className='emptyMessage'>Your cart is empty</div>
         )}
       </div>
-      <CustomButton title='GO TO CHECKOUT' />
+      <CustomButton title='GO TO CHECKOUT' onClick={() => history.push('/checkout')} />
     </div>
   );
 };
