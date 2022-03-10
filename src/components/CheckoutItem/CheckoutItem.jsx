@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './CheckoutItem.scss';
+
 const CheckoutItem = ({ item }) => {
   const { name, imageUrl, price, quantity } = item;
 
