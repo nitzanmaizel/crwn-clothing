@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './CheckOutPage.scss';
+
 const CheckOutPage = () => {
   return (
     <div className='checkoutPage'>
