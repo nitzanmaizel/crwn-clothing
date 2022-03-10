@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CheckoutHeader from './CheckoutHeader';
 
 import './CheckOutPage.scss';
