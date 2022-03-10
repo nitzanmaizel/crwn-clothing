@@ -2,7 +2,7 @@ import React from 'react';
 
 const CheckoutItem = ({ item }) => {
   const { name, imageUrl, price, quantity } = item;
-  \
+
   return (
     <div className='checkoutItem'>
       <div className='imageContainer'>
