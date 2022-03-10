@@ -11,7 +11,7 @@ import HomePage from './pages/HomePage/HomePage';
 import ShopPage from './pages/ShopPage/ShopPage';
 import AuthPage from './pages/AuthPage/AuthPage';
 import Header from './components/Header/Header';
-import CheckOutPage from './pages/CheckOutPage/CheckOutPage';
+import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 
 const App = (props) => {
   const { currentUser, setCurrentUser } = props;
@@ -40,7 +40,7 @@ const App = (props) => {
       <Switch>
         <Route exact path={'/'} component={HomePage} />
         <Route path={'/shop'} component={ShopPage} />
-        <Route exact path={'/checkout'} component={CheckOutPage} />
+        <Route exact path={'/checkout'} component={CheckoutPage} />
         <Route
           exact
           path={'/auth'}
