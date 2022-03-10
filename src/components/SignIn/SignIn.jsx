@@ -51,7 +51,12 @@ const SignIn = () => {
         />
         <div className='buttonWrapper'>
           <CustomButton title='Sign in' type='submit' />
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn title='Sign in with Google' />
+          <CustomButton
+            type='button'
+            onClick={signInWithGoogle}
+            isGoogleSignIn
+            title='Sign in with Google'
+          />
         </div>
       </form>
     </div>
