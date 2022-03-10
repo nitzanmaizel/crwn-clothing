@@ -12,6 +12,11 @@ import CustomButton from '../CustomButton/CustomButton';
 import './CartDropdown.scss';
 
 const CartDropdown = ({ cartItems, history, dispatch }) => {
+  const handleOnClick = () => {
+    history.push('/checkout');
+    dispatch(toggleCart());
+  };
+
   return (
     <div className='cartDropdown'>
       <div className='cartItems'>
@@ -21,13 +26,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => {
           <div className='emptyMessage'>Your cart is empty</div>
         )}
       </div>
-      <CustomButton
-        title='GO TO CHECKOUT'
-        onClick={() => {
-          history.push('/checkout');
-          dispatch(toggleCart());
-        }}
-      />
+      <CustomButton title='GO TO CHECKOUT' onClick={handleOnClick} />
     </div>
   );
 };
