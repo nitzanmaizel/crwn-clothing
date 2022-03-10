@@ -10,12 +10,10 @@ import { selectCurrentUser } from './redux/user/userSelectors';
 import HomePage from './pages/HomePage/HomePage';
 import ShopPage from './pages/ShopPage/ShopPage';
 import AuthPage from './pages/AuthPage/AuthPage';
-import Header from './components/Header/Header';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
+import Header from './components/Header/Header';
 
-const App = (props) => {
-  const { currentUser, setCurrentUser } = props;
-
+const App = ({ currentUser, setCurrentUser }) => {
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
