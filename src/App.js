@@ -15,8 +15,6 @@ import Header from './components/Header/Header';
 const App = (props) => {
   const { currentUser, setCurrentUser } = props;
 
-  console.log(new Date().getTime());
-
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
