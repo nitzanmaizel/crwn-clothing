@@ -30,14 +30,18 @@ export const useSignUpForm = () => {
 
   const resetFormFields = () => setSignUpForm(DEFAULT_FORM);
 
+  const resetErrors = () =>
+    setTimeout(() => {
+      setErrors('');
+    }, 3000);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
       setErrors(ERRORS.pswDontMatch);
-      return setTimeout(() => {
-        setErrors('');
-      }, 3000);
+      resetErrors();
+      return;
     }
 
     try {
