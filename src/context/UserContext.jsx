@@ -14,6 +14,7 @@ export const UserContext = createContext(INITIAL_STATE);
 
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
+
   const value = { currentUser, setCurrentUser };
 
   useEffect(() => {

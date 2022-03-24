@@ -1,15 +1,24 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
 import CartDropdown from '../../components/CartDropdown/CartDropdown';
 import CartMenu from '../../components/CartMenu/CartMenu';
 
-import { auth } from '../../utils/firebase/firebase';
+import { UserContext } from '../../context/UserContext';
+
+import { signOutUser } from '../../utils/firebase/firebase';
 
 import './Navigation.scss';
 
-const Navigation = ({ currentUser, hidden = true }) => {
+const Navigation = ({ hidden = true }) => {
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+
+  const signOutHandler = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  };
+
   return (
     <Fragment>
       <div className='header'>
@@ -25,7 +34,7 @@ const Navigation = ({ currentUser, hidden = true }) => {
           </Link>
           {currentUser ? (
             <div className='userMenu'>
-              <div className='link' onClick={() => auth.signOut()}>
+              <div className='link' onClick={signOutHandler}>
                 SIGN OUT
               </div>
               <div className='userName'>Welcome {currentUser.displayName}</div>
