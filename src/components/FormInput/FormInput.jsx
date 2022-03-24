@@ -2,10 +2,16 @@ import React from 'react';
 
 import './FormInput.scss';
 
-const FormInput = ({ handleChange, value, label, ...otherProps }) => (
-  <div className='group'>
-    <input className='form-input' onChange={handleChange} value={value} {...otherProps} />
-    {label && <label className={`${value.length ? 'shrink' : ''} form-input-label`}>{label}</label>}
+const FormInput = ({ label, value, error = '', handleChange, ...otherProps }) => (
+  <div className='inputWrapper'>
+    <input
+      className={`${error.length ? 'errorFormInput' : ''} formInput`}
+      onChange={handleChange}
+      value={value}
+      {...otherProps}
+    />
+    {label && <label className={`${value.length ? 'shrink' : ''} formInputLabel`}>{label}</label>}
+    {error && <span className='errorMsg'>{error}</span>}
   </div>
 );
 

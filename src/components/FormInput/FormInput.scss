@@ -7,11 +7,11 @@ $main-color: black;
   color: $main-color;
 }
 
-.group {
+.inputWrapper {
   position: relative;
   margin: 45px 0;
 
-  .form-input {
+  .formInput {
     background: none;
     background-color: white;
     color: $sub-color;
@@ -24,11 +24,16 @@ $main-color: black;
     border-bottom: 1px solid $sub-color;
     margin: 25px 0;
 
+    &.errorFormInput {
+      display: inherit;
+      margin-bottom: 10px;
+    }
+
     &:focus {
       outline: none;
     }
 
-    &:focus ~ .form-input-label {
+    &:focus ~ .formInputLabel {
       @include shrinkLabel();
     }
   }
@@ -37,7 +42,7 @@ $main-color: black;
     letter-spacing: 0.3em;
   }
 
-  .form-input-label {
+  .formInputLabel {
     color: $sub-color;
     font-size: 16px;
     font-weight: normal;
@@ -50,5 +55,9 @@ $main-color: black;
     &.shrink {
       @include shrinkLabel();
     }
+  }
+
+  .errorMsg {
+    color: red;
   }
 }

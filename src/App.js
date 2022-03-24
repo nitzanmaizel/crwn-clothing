@@ -1,60 +1,23 @@
-import React, { useEffect } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import { createStructuredSelector } from 'reselect';
-import { connect } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
 
-import { auth, createUserProfileDocument } from './firebase/firebase';
-import { setCurrentUser } from './redux/user/userActions';
-import { selectCurrentUser } from './redux/user/userSelectors';
+import HomePage from './routes/Home/HomePage';
+import Navigation from './routes/Navigation/Navigation';
+import AuthPage from './routes/AuthPage/AuthPage';
 
-import HomePage from './pages/HomePage/HomePage';
-import ShopPage from './pages/ShopPage/ShopPage';
-import AuthPage from './pages/AuthPage/AuthPage';
-import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
-import Header from './components/Header/Header';
+const Shop = () => {
+  return <h1>I am the shop page</h1>;
+};
 
-const App = ({ currentUser, setCurrentUser }) => {
-  useEffect(() => {
-    const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot((snapShot) => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data(),
-          });
-        });
-      } else {
-        setCurrentUser(userAuth);
-      }
-    });
-
-    return () => unsubscribeFromAuth();
-  }, [setCurrentUser]);
-
+const App = () => {
   return (
-    <div>
-      <Header />
-      <Switch>
-        <Route exact path={'/'} component={HomePage} />
-        <Route path={'/shop'} component={ShopPage} />
-        <Route exact path={'/checkout'} component={CheckoutPage} />
-        <Route
-          exact
-          path={'/auth'}
-          render={() => (currentUser ? <Redirect to='/' /> : <AuthPage />)}
-        />
-      </Switch>
-    </div>
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<HomePage />} />
+        <Route path='shop' element={<Shop />} />
+        <Route path='auth' element={<AuthPage />} />
+      </Route>
+    </Routes>
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
