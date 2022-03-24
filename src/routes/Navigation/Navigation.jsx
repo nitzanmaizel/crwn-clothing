@@ -16,26 +16,26 @@ const Navigation = ({ hidden = true }) => {
 
   return (
     <Fragment>
-      <div className='header'>
+      <div className='navigation'>
         <Link className='logoContainer' to='/'>
           <CrwnLogo className='logo' />
         </Link>
-        <div className='headerLinks'>
-          <Link className='link' to='/shop'>
+        <div className='linksWrapper'>
+          <Link className='navLink' to='/shop'>
             SHOP
           </Link>
-          <Link className='link' to='/shop'>
+          <Link className='navLink' to='/shop'>
             CONTACT
           </Link>
           {currentUser ? (
             <div className='userMenu'>
-              <div className='link' onClick={signOutUser}>
+              <div className='navLink' onClick={signOutUser}>
                 SIGN OUT
               </div>
               <div className='userName'>Welcome {currentUser.displayName}</div>
             </div>
           ) : (
-            <Link className='link' to='/auth'>
+            <Link className='navLink' to='/auth'>
               SIGN IN
             </Link>
           )}

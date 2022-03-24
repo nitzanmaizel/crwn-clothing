@@ -1,4 +1,4 @@
-.header {
+.navigation {
   height: 70px;
   max-width: 100%;
   display: flex;
@@ -14,7 +14,7 @@
     align-items: center;
   }
 
-  .headerLinks {
+  .linksWrapper {
     height: 100%;
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@
       }
     }
 
-    .link {
+    .navLink {
       padding: 10px 15px;
       cursor: pointer;
     }
